@@ -1,4 +1,5 @@
 # 🗜️ Python-POD - POD Extraction Tool
+![Demonstration](./Screenshots/PyPOD-Demo.gif)
 **Author:** Johnny Shumway (jShum00)
 **License:** MIT
 **Version:** 1.1
@@ -23,9 +24,6 @@ This tool includes:
 
 ## 📸 Screenshots
 Below are a few screenshots of the tool in-action:
-
-**Demo**<br />
-![Demonstration](./Screenshots/PyPOD-Demo.gif)
 
 **First Look**<br />
 ![First look at PyPOD](./Screenshots/PyPOD-Start.png)
