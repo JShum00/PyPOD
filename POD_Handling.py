@@ -2,7 +2,7 @@
 POD Handler Module
 Author: Johnny Shumway (jShum00)
 
-This handles extracting the extraction of the POD data in the .POD/.pod files. 
+This handles the extraction of the POD data in the .POD/.pod files. 
 Meant to help the GUI extract the contents of a 4x4 Evo/Evo2 POD file. Based on
 Dummiesman's Poddy tool, found here:
 
