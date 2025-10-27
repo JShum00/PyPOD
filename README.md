@@ -47,11 +47,12 @@ Tested on Python 3.10+ (Linux).
 ---
 
 ## ⌨️ Controls
-Button              Action
-LMB                 Select the entry item in the tree-view.
-'Open POD'          Opens a dialog for you to select the POD file of choice.
-'Extract Selected'  Extracted one or more individually selected items.
-'Extract All'       Extracts all content from the POD to a designated position. (It is recommended to create a folder).
+| Button             | Action                                                      |
+|--------------------|-------------------------------------------------------------|
+| LMB                | Select the entry item in the tree-view.                     |
+| 'Open POD'         | Opens a dialog for you to select the POD file of choice.    |
+| 'Extract Selected' | Extracts one or more individually selected items.           |
+| 'Extract All'      | Extracts all content from the POD to a designated location. |
 
 --- 
 
