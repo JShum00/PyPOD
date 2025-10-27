@@ -1,6 +1,18 @@
+"""
+POD Handler Module
+Author: Johnny Shumway (jShum00)
+
+This handles extracting the extraction of the POD data in the .POD/.pod files. 
+Meant to help the GUI extract the contents of a 4x4 Evo/Evo2 POD file. Based on
+Dummiesman's Poddy tool, found here:
+
+https://github.com/Dummiesman/Poddy/tree/main/PODTool
+"""
+
 import struct, io, time
 from Constants import Constants
 
+# ------------------ POD Data Initialization ------------------------
 class PodEntry:
     def __init__(self, name, offset, size, timestamp=0):
         self.name = name
@@ -8,7 +20,9 @@ class PodEntry:
         self.size = size
         self.timestamp = timestamp
 
+# ------------------ Extractor Initialization ------------------------
 class PodFile:
+    # Initialize
     def __init__(self, path):
         self.path = path
         self.title = ""
@@ -16,11 +30,12 @@ class PodFile:
         self.version = None
         with open(path, "rb") as f:
             self._load(f)
-
+    # Fixed Data Read
     def _read_fixed(self, f, length):
         data = f.read(length)
         return data.split(b"\x00", 1)[0].decode("ascii", "ignore")
 
+    # Null Value Termination
     def _read_nullterm(self, f):
         buf = bytearray()
         while True:
@@ -30,6 +45,7 @@ class PodFile:
             buf.extend(b)
         return buf.decode("ascii", "ignore")
 
+    # Load Data
     def _load(self, f: io.BufferedReader):
         magic = struct.unpack("<I", f.read(4))[0]
         if magic == 0x65787464:  # 'dtxe' or 'tsal' for EPD1
@@ -122,6 +138,7 @@ class PodFile:
             size, offset, ts, checksum = struct.unpack("<IIII", f.read(16))
             self.entries.append(PodEntry(name, offset, size, ts))
 
+    # ------------------ Data Extraction (All Entries) ------------------------
     def extract(self, outdir="."):
         import os
         os.makedirs(outdir, exist_ok=True)
