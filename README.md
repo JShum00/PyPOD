@@ -15,7 +15,7 @@ This tool includes:
 ---
 
 ## 🚀 Features
-- Loads and displays the contents of `.POD`/`.pod` models
+- Loads and displays the contents of `.POD`/`.pod` archives.
 - A simple easy-to-use interface
 - Speedy data extraction
 - Lightweight application
